@@ -1,0 +1,20 @@
+{
+    "name": "ay4t/php-iak",
+    "description": "IAK PHP Client API",
+    "type": "library",
+    "require": {
+        "guzzlehttp/guzzle": "^7.5"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Ay4t\\IAK\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Ayatulloh Ahad R",
+            "email": "kawoel@gmail.com"
+        }
+    ]
+}
