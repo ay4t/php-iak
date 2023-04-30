@@ -7,11 +7,13 @@ error_reporting(E_ALL);
 
 use Ay4t\IAK\Client;
 
+$env        = parse_ini_file( __DIR__ . '/../.env');
+
 require_once __DIR__ . '/../vendor/autoload.php';
 
-$apiKey     = 'your_api_key';
-$username   = 'username_anda';
-$isSandbox  = true;
+$apiKey     = $env['IAK_API_KEY'];
+$username   = $env['IAK_USERNAME'];
+$isSandbox  = false;
 
 $iak = new Client($apiKey, $username, $isSandbox);
 

@@ -6,6 +6,7 @@ class Client extends AbstractRequest
 {
     /**
      * Function: api_call
+     * API to get remaining balance in your IAK wallet.
      * @return array
      */
     public function checkBalance()
@@ -16,6 +17,7 @@ class Client extends AbstractRequest
 
     /**
      * Function: checkOperator
+     * API to get operator name from customer id prefix. You can refer to here for operator prefix
      * @param string $target
      * @return array
      */
@@ -29,6 +31,7 @@ class Client extends AbstractRequest
 
     /**
      * Function: pricelist
+     * API to get pricelist of IAK prepaid products.
      * @return array
      */
     public function pricelist()
@@ -39,6 +42,11 @@ class Client extends AbstractRequest
 
     /**
      * Function: topUp
+     * API to top up prepaid products.
+     * 
+     * For the first time, top up will always response processing. IAK will send callback once the transaction become > success / failed. Learn more about callback here
+     * If you top up again with the same ref_id, then it we will not proceed the transaction but it will become check status. Learn more about check status here
+     * 
      * @param string $refId
      * @param string $product_code
      * @param string $target
@@ -55,6 +63,7 @@ class Client extends AbstractRequest
 
     /**
      * Function: checkStatus
+     * API to check status prepaid transaction.
      * @param string $refId
      * @return array
      */
